@@ -22,6 +22,46 @@ keys.forEach((key) => {
   // Add title attribute to each key based on its dataset value
   key.setAttribute("title", key.dataset.value);
 });
+// Listen for keypress events on the document
+document.addEventListener("keypress", handleKeyPress);
+document.addEventListener("keydown", handleKeyDown);
+
+// Function to handle keydown events
+function handleKeyDown(event) {
+  // get keycode from the event
+  const keyCode = event.keyCode || event.which;
+
+  // if the user press backspace
+  if (keyCode === 8) {
+    // call the backspace function
+    backspace();
+  }
+}
+
+// Function to handle keypress events
+function handleKeyPress(event) {
+  // Get the key pressed
+  const key = event.key;
+
+  // Check if the pressed key is a number
+  if (
+    /\d/.test(key) ||
+    key == "+" ||
+    key === "-" ||
+    key === "*" ||
+    key === "/" ||
+    key === "."
+  ) {
+    // Trasnfer the key to handleClicks function to handle value input
+    handleClicks({ target: { dataset: { value: key } } });
+  } else if (key === "Enter") {
+    // If the key is the Enter key, handle it as the compute action
+    handleEqual();
+  } else if (key.toLowerCase() === "c") {
+    // If the key is "C" or "c", handle it as the clear action
+    clearDisplay();
+  }
+}
 
 // Array of operators
 const operators = ["+", "-", "*", "/"];
