@@ -1,0 +1,89 @@
+$dark-color: hsl(0, 0%, 15%);
+$light-dark-color: hsl(0, 0%, 20%);
+$light-color: hsl(0, 0%, 95%);
+
+
+$primary-color: hsl(35, 100%, 55%);
+$primary-color-hover: hsl(35, 100%, 65%);
+$primary-color-active: hsl(35, 100%, 75%);
+
+$secondary-color: hsl(0, 0%, 40%);
+$secondary-color-hover: hsl(0, 0%, 50%);
+$secondary-color-active: hsl(0, 0%, 60%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $light-color;
+}
+
+#codesoft_calculator {
+  font-family: Arial, sans-serif;
+  background-color: $dark-color;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+
+  --bg-transiotion: background-color 0.3s ease-in-out;
+
+  input {
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
+    border: none;
+    background-color: $light-dark-color;
+    color: #fff;
+  }
+
+  #keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+
+    button {
+      width: 100%;
+      max-width: 100px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      border: none;
+      background-color: $secondary-color;
+      color: #fff;
+      font-size: calc(1.8rem + 0.5vw);
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--bg-transiotion);
+
+      &:hover {
+        background-color: $secondary-color-hover;
+      }
+
+      &:active {
+        background-color: $secondary-color-active;
+      }
+    }
+
+    .operator_btn {
+      background-color: $primary-color;
+
+      &:hover {
+        background-color: $primary-color-hover;
+      }
+
+      &:active {
+        background-color: $primary-color-active;
+      }
+    }
+  }
+}

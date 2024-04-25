@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(0, 0%, 95%);
+}
+
+#codesoft_calculator {
+  font-family: Arial, sans-serif;
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+  --bg-transiotion: background-color 0.3s ease-in-out;
+}
+#codesoft_calculator input {
+  width: 100%;
+  padding: 20px;
+  font-size: 5rem;
+  text-align: left;
+  border: none;
+  background-color: hsl(0, 0%, 20%);
+  color: #fff;
+}
+#codesoft_calculator #keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 25px;
+}
+#codesoft_calculator #keys button {
+  width: 100%;
+  max-width: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: none;
+  background-color: hsl(0, 0%, 40%);
+  color: #fff;
+  font-size: calc(1.8rem + 0.5vw);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--bg-transiotion);
+}
+#codesoft_calculator #keys button:hover {
+  background-color: hsl(0, 0%, 50%);
+}
+#codesoft_calculator #keys button:active {
+  background-color: hsl(0, 0%, 60%);
+}
+#codesoft_calculator #keys .operator_btn {
+  background-color: hsl(35, 100%, 55%);
+}
+#codesoft_calculator #keys .operator_btn:hover {
+  background-color: hsl(35, 100%, 65%);
+}
+#codesoft_calculator #keys .operator_btn:active {
+  background-color: hsl(35, 100%, 75%);
+}/*# sourceMappingURL=styles.css.map */
